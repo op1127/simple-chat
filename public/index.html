@@ -11,18 +11,42 @@
 </head>
 
 <body>
-    <div class="centered-form">
-        <div class="centered-form__box">
-            <h1>Join</h1>
-            <form action="/chat.html">
-                <label for="">Username</label>
-                <input type="text" name="username" placeholder="Username" required>
-                <label>Chat Room</label>
-                <input type="text" name="room" placeholder="Room" required>
-                <button>Join</button>
-            </form>
+    <div class="container">
+        <div class="container__content">
+            <img class="logo" src="./img/simple-chat.svg" alt="logo">
+            <h2 class="subheading">A fast, lightweight chat app for you and your friends.</h2>
+
+            <div class="centered-form">
+                <div class="centered-form__box">
+
+                    <form class="form-group" action="/chat.html">
+
+                        <input class="username" type="text" name="username" placeholder="Username" required
+                            autocomplete="off">
+
+                        <input class="chat-room" type="text" name="room" placeholder="Chat Room" required
+                            autocomplete="off">
+                        <button>Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="computer-container">
+                <div class="animations">
+                        <svg class="user-chat" width="100%" height="100%" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                            <g>
+                                <circle cx="5" cy="6" r="3" style="fill:#fff;"/>
+                                <path d="M5,10c-1.856,0.001 -3.627,0.788 -4.871,2.165c-0.083,0.092 -0.129,0.211 -0.129,0.335l0,2.5c0,0.549 0.451,1 1,1l8,0c0.549,0 1,-0.451 1,-1l0,-2.5c0,-0.124 -0.046,-0.243 -0.129,-0.335c-1.244,-1.377 -3.015,-2.164 -4.871,-2.165Z" style="fill:#fff;fill-rule:nonzero;"/>
+                                <path d="M15,1l-5,0c-0.549,0 -1,0.451 -1,1l0,3c0,0.549 0.451,1 1,1l0,1.5c0,0.215 0.138,0.406 0.342,0.474c0.051,0.017 0.104,0.026 0.158,0.026c0.157,0 0.306,-0.074 0.4,-0.2l1.35,-1.8l2.75,0c0.549,0 1,-0.451 1,-1l0,-3c0,-0.549 -0.451,-1 -1,-1Z" style="fill:#fff;fill-rule:nonzero;"/>
+                            </g>
+                        </svg>
+                </div>
+                <img src="./img/computer.svg" alt="Computer" class="computer">
+            </div>
         </div>
+
     </div>
+
 </body>
 
 </html>

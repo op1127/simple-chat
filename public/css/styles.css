@@ -3,47 +3,63 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 html {
-    font-size: 16px;
+    box-sizing: border-box;
+    font-size: 62.5%;       
 }
 
+
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+
+
+
 input {
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 body {
     line-height: 1.4;
     color: #333333;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Lato, Arial, sans-serif;
 }
 
 h1 {
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
 }
 
 label {
     display: block;
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 1.4rem;
+    margin-bottom: .8rem;
     color: #777;
 }
 
 input {
     border: 1px solid #eeeeee;
-    padding: 12px;
+    padding: 1.2rem;
     outline: none;
 }
 
 button {
     cursor: pointer;
-    padding: 12px;
+    padding: 1.2rem;
     background: #7C5CBF;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 1.6rem;
     transition: background .3s ease;
 }
 
@@ -58,7 +74,7 @@ button:disabled {
 
 /* Join Page Styles */
 
-.centered-form {
+.container {
     background: #333744;
     width: 100vw;
     height: 100vh;   
@@ -67,20 +83,100 @@ button:disabled {
     align-items: center;
 }
 
+.container__content {
+    width: fit-content;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media only screen and (max-width: 75em) {
+    .container__content {
+    
+        height: 75%;
+    }
+}
+
+.logo {
+    width: 35rem;
+}
+
+.subheading {
+    text-align: center;
+    color: #fff;
+    font-size: 2.4rem;
+}
 .centered-form__box {
-    box-shadow: 0px 0px 17px 1px #1D1F26;
-    background: #F7F7FA;
-    padding: 24px;
-    width: 250px;
+    padding: 2.4rem;
+    width: fit-content;
+}
+
+.form-group {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 .centered-form button {
-    width: 100%;
+    width: 20rem;
+    border-radius: 0 25rem 25rem 0;
+    
 }
 
 .centered-form input {
-    margin-bottom: 16px;
+    
     width: 100%;
+}
+
+.username {
+    margin-right: 3rem;
+    border-radius: 25rem;
+    
+}
+
+.chat-room {
+    border-radius: 25rem 0 0 25rem;
+}
+
+.computer-container {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+}
+
+.animations {
+    width: 91.5%;
+    height: 63%;
+    top: 6%;
+    left: 4%;
+    position: absolute;
+    z-index: 1;
+    background-color: blue;
+    padding: 4rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-chat {
+    width: 35%;
+}
+
+.computer {
+    width: 60rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+    .computer {
+        width: 40rem;
+    }
+    
 }
 
 /* Chat Page Layout */
@@ -93,7 +189,7 @@ button:disabled {
     height: 100vh;
     color: white;
     background: #333744;
-    width: 225px;
+    width: 22.5rem;
     overflow-y: scroll
 }
 
@@ -108,25 +204,25 @@ button:disabled {
 
 .chat__messages {
     flex-grow: 1;
-    padding: 24px 24px 0 24px;
+    padding: 2.4rem 2.4rem 0 2.4rem;
     overflow-y: scroll;
 }
 
 /* Message Styles */
 
 .message {
-    margin-bottom: 16px;   
+    margin-bottom: 1.6rem   
 }
 
 .message__name {
     font-weight: 600;
-    font-size: 14px;
-    margin-right: 8px;
+    font-size: 1.4rem;
+    margin-right: .8rem;
 }
 
 .message__meta {
     color: #777;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .message a {
@@ -138,46 +234,46 @@ button:disabled {
 .compose {
     display: flex;
     flex-shrink: 0;
-    margin-top: 16px;
-    padding: 24px;
+    margin-top: 1.6rem;
+    padding: 2.4rem;
 }
 
 .compose form {
     display: flex;
     flex-grow: 1;
-    margin-right: 16px;
+    margin-right: 1.6rem;
 }
 
 .compose input {
     border: 1px solid #eeeeee;
     width: 100%;
-    padding: 12px;
-    margin: 0 16px 0 0;
+    padding: 1.2rem;
+    margin: 0 1.6rem 0 0;
     flex-grow: 1;
 }
 
 .compose button {
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 /* Chat Sidebar Styles */
 
 .room-title {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 2.2rem;
     background: #2c2f3a;
-    padding: 24px;   
+    padding: 2.4rem;   
 }
 
 .list-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.8rem;
     margin-bottom: 4px;
-    padding: 12px 24px 0 24px;
+    padding: 1.2rem 2.4rem 0 2.4rem;
 }
 
 .users {
     list-style-type: none;
     font-weight: 300;
-    padding: 12px 24px 0 24px;
+    padding: 1.2rem 2.4rem 0 2.4rem;
 }
