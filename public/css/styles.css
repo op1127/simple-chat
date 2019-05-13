@@ -83,6 +83,11 @@ button:disabled {
     align-items: center;
 }
 
+.container p {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
 .container__content {
     width: fit-content;
     height: 90%;
@@ -109,9 +114,11 @@ button:disabled {
     color: #fff;
     font-size: 2.4rem;
 }
+
 .centered-form__box {
     padding: 2.4rem;
     width: fit-content;
+    height: fit-content;
 }
 
 .form-group {
@@ -119,14 +126,16 @@ button:disabled {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
+
 
 .centered-form button {
     width: 20rem;
     border-radius: 0 25rem 25rem 0;
     
 }
+
+
 
 .centered-form input {
     
@@ -156,7 +165,7 @@ button:disabled {
     left: 4%;
     position: absolute;
     z-index: 1;
-    background-color: blue;
+    
     padding: 4rem;
 
     display: flex;
@@ -165,21 +174,97 @@ button:disabled {
 }
 
 .user-chat {
-    width: 35%;
+    width: 40%;
+}
+
+
+.user-chat-2 {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    
+}
+
+.bubble-1 {
+    animation: bubbleOne 2s ease-in-out infinite;
+}
+
+.bubble-2 {
+    animation: bubbleTwo 2s ease-in-out infinite;
+}
+
+@keyframes bubbleOne{
+    0% {
+        transform: translateY();
+    }
+
+    50% {
+        transform: translateY(-1px)
+    }
+
+    100% {
+        transform: translateY();
+    }
+}
+
+@keyframes bubbleTwo{
+    0% {
+        transform: translateY(-1px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-1px);
+    }
 }
 
 .computer {
-    width: 60rem;
+    width: 65rem;
 }
 
 @media only screen and (max-width: 37.5em) {
     .computer {
         width: 40rem;
     }
-    
+
+    .form-group {
+        
+        flex-direction: column;
+        height: 20rem;
+        width: 30rem;
+    }
+
+    .username {
+        margin: 0;
+    }
+
+    .chat-room {
+        border-radius: 25rem;
+    }
+
+    .centered-form button {
+        width: 20rem;
+        border-radius: 25rem;
+    }
 }
 
 /* Chat Page Layout */
+
+.chat-container {
+    font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+    .chat-container {
+        font-size: 2.3rem;
+    }
+}
 
 .chat {
     display: flex;
@@ -200,6 +285,7 @@ button:disabled {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
+    
 }
 
 .chat__messages {
@@ -248,12 +334,20 @@ button:disabled {
     border: 1px solid #eeeeee;
     width: 100%;
     padding: 1.2rem;
-    margin: 0 1.6rem 0 0;
+    
     flex-grow: 1;
+
+    border-radius: 25rem 0 0 25rem;
 }
 
-.compose button {
+.send-btn {
     font-size: 1.4rem;
+    border-radius: 0 25rem 25rem 0;
+}
+
+.location-btn {
+    border-radius: 25rem;
+    padding: 0 2rem; 
 }
 
 /* Chat Sidebar Styles */
