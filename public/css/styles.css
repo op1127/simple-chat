@@ -55,7 +55,7 @@ input {
 
 button {
     cursor: pointer;
-    padding: 1.2rem;
+    padding: 1.2rem 3rem;
     background: #7C5CBF;
     border: none;
     color: white;
@@ -343,11 +343,6 @@ button:disabled {
 .send-btn {
     font-size: 1.4rem;
     border-radius: 0 25rem 25rem 0;
-}
-
-.location-btn {
-    border-radius: 25rem;
-    padding: 0 2rem; 
 }
 
 /* Chat Sidebar Styles */
