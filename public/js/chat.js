@@ -15,6 +15,7 @@ const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML;
 // Options
 const {username, room} = Qs.parse(location.search, { ignoreQueryPrefix: true });
 
+// Enables autoscroll with a new message
 const autoscroll = () => {
     const $newMessage = $messages.lastElementChild;
 
@@ -33,6 +34,7 @@ const autoscroll = () => {
     }
 };
 
+// New message
 socket.on('message', message => {
     console.log(message);
     const html = Mustache.render(messageTemplate , {
@@ -44,17 +46,8 @@ socket.on('message', message => {
     autoscroll();
 });
 
-socket.on('locationMessage', (message) => {
-    console.log(message);
-    const html = Mustache.render(locationMessageTemplate, {
-        username: message.username,
-        url: message.url,
-        createdAt: moment(message.createdAt).format('h:mm a')
-    })
-    $messages.insertAdjacentHTML('beforeend', html);
-    autoscroll();
-});
 
+// Chat room info
 socket.on('roomData', ({ room, users }) => {
     const html = Mustache.render(sidebarTemplate, {
         room,
@@ -82,6 +75,7 @@ $messageForm.addEventListener('submit', e => {
     });
 });
 
+// Fallback if geolocation is not allowed
 $sendLocationButton.addEventListener('click', () => {
     if (!navigator.geolocation) {
         return alert('Geolocation is not supported by your browser.')
