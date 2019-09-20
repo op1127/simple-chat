@@ -15,7 +15,6 @@ const publicPath = path.join(__dirname, '../public');
 
 app.use(express.static(publicPath));
 
-io.set('transports', ['websocket']); //New Code
 
 io.on('connection', socket => {
     console.log('New WebSocket Connection');
