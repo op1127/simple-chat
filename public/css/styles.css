@@ -270,6 +270,12 @@ button:disabled {
     overflow-y: scroll
 }
 
+@media only screen and (max-width: 37.5em) {
+    .chat__sidebar {
+        width: auto;
+    }
+}
+
 /* Chat styles */
 
 .chat__main {
