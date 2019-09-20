@@ -93,7 +93,7 @@ button:disabled {
 }
 
 .container__content {
-    width: fit-content;
+    width: auto;
     height: 90%;
 
     display: flex;
@@ -109,8 +109,17 @@ button:disabled {
     }
 }
 
+
+@media only screen and (max-width: 37.5em) {
+    .container__content {
+        justify-content: center;
+    }
+}
+
+
 .logo {
     width: 35rem;
+    padding-bottom: 1rem;
 }
 
 .subheading {
@@ -121,14 +130,14 @@ button:disabled {
 
 @media only screen and (max-width: 37.5em) {
     .subheading {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 }
 
 .centered-form__box {
     padding: 2.4rem;
-    width: fit-content;
-    height: fit-content;
+    width: auto;
+    height: auto;
 }
 
 .form-group {
@@ -168,20 +177,6 @@ button:disabled {
     position: relative;
 }
 
-.animations {
-    width: 91.5%;
-    height: 63%;
-    top: 6%;
-    left: 4%;
-    position: absolute;
-    z-index: 1;
-    
-    padding: 4rem;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .user-chat {
     width: 40%;
@@ -227,8 +222,7 @@ button:disabled {
 
 @media only screen and (max-width: 37.5em) {
     .sc-computer {
-        width: 55rem;
-        margin-bottom: 1rem;
+        display: none;
     }
 
     .form-group {
