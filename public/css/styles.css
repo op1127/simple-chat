@@ -40,6 +40,10 @@ h1 {
     margin-bottom: 1.6rem;
 }
 
+.main-title {
+    display: none;
+}
+
 label {
     display: block;
     font-size: 1.4rem;
@@ -115,6 +119,12 @@ button:disabled {
     font-size: 2.4rem;
 }
 
+@media only screen and (max-width: 37.5em) {
+    .subheading {
+        font-size: 2rem;
+    }
+}
+
 .centered-form__box {
     padding: 2.4rem;
     width: fit-content;
@@ -153,8 +163,8 @@ button:disabled {
 }
 
 .computer-container {
-    height: fit-content;
-    width: fit-content;
+    height: auto;
+    width: auto;
     position: relative;
 }
 
@@ -188,49 +198,37 @@ button:disabled {
     
 }
 
-.bubble-1 {
-    animation: bubbleOne 2s ease-in-out infinite;
+#chat-bubble {
+    transform-origin: center;
+    animation: chatbubble 2s ease-in-out infinite;
 }
 
-.bubble-2 {
-    animation: bubbleTwo 2s ease-in-out infinite;
-}
 
-@keyframes bubbleOne{
+
+
+@keyframes chatbubble {
     0% {
-        transform: translateY();
+        transform: scale(1);
     }
 
     50% {
-        transform: translateY(-1px)
+        transform: scale(1.1);
     }
 
     100% {
-        transform: translateY();
+        transform: scale(1);
     }
 }
 
-@keyframes bubbleTwo{
-    0% {
-        transform: translateY(-1px);
-    }
 
-    50% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-1px);
-    }
-}
-
-.computer {
-    width: 65rem;
+.sc-computer {
+    width: 80rem;
 }
 
 @media only screen and (max-width: 37.5em) {
-    .computer {
-        width: 40rem;
+    .sc-computer {
+        width: 55rem;
+        margin-bottom: 1rem;
     }
 
     .form-group {
