@@ -36,7 +36,6 @@ const autoscroll = () => {
 
 // New message
 socket.on('message', message => {
-    console.log(message);
     const html = Mustache.render(messageTemplate , {
         username: message.username,
         message: message.text,
@@ -70,8 +69,6 @@ $messageForm.addEventListener('submit', e => {
         if (error) {
             return console.log(error);
         }
-
-        console.log('Message delivered')
     });
 });
 
